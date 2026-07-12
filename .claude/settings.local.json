@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pip install -e \".[dev]\")",
+      "Bash(py -0)",
+      "Bash(py -3.11 --version)",
+      "Bash(winget list *)",
+      "Bash(winget install *)",
+      "Bash(py -3.11 -m venv .venv)",
+      "Bash(.venv/Scripts/python.exe -m pip install -e \".[dev]\")",
+      "Bash(.venv/Scripts/python.exe -m pytest -v)"
+    ]
+  }
+}
