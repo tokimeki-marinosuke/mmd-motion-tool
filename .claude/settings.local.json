@@ -20,7 +20,8 @@
       "Skill(update-config:*)",
       "Bash(python -c \"import json; json.load\\(open\\('.claude/settings.json', encoding='utf-8'\\)\\); print\\('OK'\\)\")",
       "Bash(.venv/Scripts/python.exe -c ' *)",
-      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -c ' *)"
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -c ' *)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/export_roundtrip.py)"
     ]
   }
 }
