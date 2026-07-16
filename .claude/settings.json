@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pytest)",
+      "Bash(pytest *)",
+      "Bash(python -m pytest)",
+      "Bash(python -m pytest *)",
+      "Bash(.venv/Scripts/python.exe -m pytest)",
+      "Bash(.venv/Scripts/python.exe -m pytest *)",
+      "PowerShell(pytest)",
+      "PowerShell(pytest *)",
+      "PowerShell(python -m pytest)",
+      "PowerShell(python -m pytest *)",
+      "Bash(pip install -e .)",
+      "Bash(pip install -e \".[dev]\")",
+      "Bash(python -m pip install -e .)",
+      "Bash(python -m pip install -e \".[dev]\")",
+      "Bash(.venv/Scripts/python.exe -m pip install -e .)",
+      "Bash(.venv/Scripts/python.exe -m pip install -e \".[dev]\")",
+      "PowerShell(pip install -e .)",
+      "PowerShell(pip install -e \".[dev]\")",
+      "PowerShell(python -m pip install -e .)",
+      "PowerShell(python -m pip install -e \".[dev]\")",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "PowerShell(git status)",
+      "PowerShell(git status *)",
+      "PowerShell(git add *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git diff)",
+      "PowerShell(git diff *)",
+      "Bash(ls)",
+      "Bash(ls *)",
+      "Bash(tree)",
+      "Bash(tree *)",
+      "PowerShell(Get-ChildItem)",
+      "PowerShell(Get-ChildItem *)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "PowerShell(Remove-Item*)",
+      "Bash(git push*)",
+      "PowerShell(git push*)",
+      "Edit(pyproject.toml)",
+      "Write(pyproject.toml)"
+    ]
+  }
+}

@@ -8,7 +8,19 @@
       "Bash(winget install *)",
       "Bash(py -3.11 -m venv .venv)",
       "Bash(.venv/Scripts/python.exe -m pip install -e \".[dev]\")",
-      "Bash(.venv/Scripts/python.exe -m pytest -v)"
+      "Bash(.venv/Scripts/python.exe -m pytest -v)",
+      "WebSearch",
+      "WebFetch(domain:mikumikudance.fandom.com)",
+      "WebFetch(domain:deepwiki.com)",
+      "WebFetch(domain:docs.vidol.chat)",
+      "Bash(curl -sL \"https://api.github.com/repos/Nuthouse01/PMX-VMD-Scripting-Tools/contents/mmd_scripting/core\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/Nuthouse01/PMX-VMD-Scripting-Tools/master/mmd_scripting/core/nuthouse01_vmd_parser.py\" -o vmd_parser.py)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/Nuthouse01/PMX-VMD-Scripting-Tools/master/mmd_scripting/core/nuthouse01_vmd_struct.py\" -o vmd_struct.py)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python -c \"import json; json.load\\(open\\('.claude/settings.json', encoding='utf-8'\\)\\); print\\('OK'\\)\")",
+      "Bash(.venv/Scripts/python.exe -c ' *)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -c ' *)"
     ]
   }
 }
