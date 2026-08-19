@@ -13,8 +13,14 @@ dependencies = ["janome>=0.5"]
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
 
+[project.scripts]
+mmd-motion-tool = "cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools]
+py-modules = ["main", "cli"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

@@ -33,7 +33,15 @@
       "Bash(cp output/wave_happy.vmd big_wave.vmd)",
       "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"控えめに手を振って\")",
       "Bash(cp output/wave_happy.vmd small_wave.vmd)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git rm *)",
+      "Bash(.venv/Scripts/mmd-motion-tool generate *)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/mmd-motion-tool generate \"元気よく手を振る\" --output output/wave2.vmd)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/mmd-motion-tool generate \"大きく手を振って\" --output output/wave_big.vmd)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/mmd-motion-tool generate \"控えめに手を振って\" --output output/wave_small.vmd)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/cli.py generate \"元気よく手を振る\" --output output/wave_direct.vmd)"
     ]
   }
 }

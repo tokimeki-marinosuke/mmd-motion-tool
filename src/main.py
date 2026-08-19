@@ -1,15 +1,15 @@
-"""文章から動作タグを解析し、対応するVMDモーションを output/ に出力するCLI。
+"""文章から動作タグを解析し、対応するVMDモーションを出力するコア処理。
 
 処理の流れ:
-1. コマンドライン引数で文章を受け取る
+1. 文章を受け取る
 2. src.rules.parser でルールベース解析を行いタグ(action・emotion・intensity)を抽出する
 3. src.motions.library のモーションカタログから、タグに最も近いモーションを検索する
 4. 該当するVMDファイルを読み込み、intensityに応じてボーンフレームの
-   移動量・回転量をスケール調整してから output/ に書き出す
+   移動量・回転量をスケール調整してから指定パスに書き出す
+
+コマンドラインからの利用は src/cli.py(mmd-motion-tool コマンド)を参照。
 """
 
-import argparse
-import sys
 from pathlib import Path
 
 from motions.adjust import intensity_to_scale, scale_motion
@@ -18,19 +18,9 @@ from rules.parser import parse_sentence
 from vmd.parser import read_vmd
 from vmd.writer import write_vmd
 
-DEFAULT_OUTPUT_DIR = Path("output")
 
-
-def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="文章から動作を解析し、対応するVMDモーションをoutput/に出力する"
-    )
-    parser.add_argument("text", help="モーションを指示する文章(例: '元気よく手を振って')")
-    return parser
-
-
-def run(text: str, output_dir: Path = DEFAULT_OUTPUT_DIR, catalog: MotionLibrary | None = None) -> int:
-    """文章を解析し、該当するVMDをintensityに応じてスケール調整してoutput_dirに書き出す。
+def run(text: str, output_path: Path, catalog: MotionLibrary | None = None) -> int:
+    """文章を解析し、該当するVMDをintensityに応じてスケール調整してoutput_pathに書き出す。
 
     戻り値は終了コード(成功:0、動作/モーションが見つからない場合:1)。
     """
@@ -57,17 +47,7 @@ def run(text: str, output_dir: Path = DEFAULT_OUTPUT_DIR, catalog: MotionLibrary
     scale = intensity_to_scale(parsed.intensity)
     scaled_motion = scale_motion(motion, scale)
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-    dest = output_dir / entry.path.name
-    write_vmd(dest, scaled_motion)
-    print(f"モーションを出力しました: {dest} (scale={scale:.2f}倍)")
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    write_vmd(output_path, scaled_motion)
+    print(f"モーションを出力しました: {output_path} (scale={scale:.2f}倍)")
     return 0
-
-
-def main(argv: list[str] | None = None) -> int:
-    args = build_arg_parser().parse_args(argv)
-    return run(args.text)
-
-
-if __name__ == "__main__":
-    sys.exit(main())
