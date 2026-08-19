@@ -21,7 +21,12 @@
       "Bash(python -c \"import json; json.load\\(open\\('.claude/settings.json', encoding='utf-8'\\)\\); print\\('OK'\\)\")",
       "Bash(.venv/Scripts/python.exe -c ' *)",
       "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe -c ' *)",
-      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/export_roundtrip.py)"
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/export_roundtrip.py)",
+      "Bash(.venv/Scripts/python.exe -m pip install janome)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/generate_placeholder_motions.py)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"元気よく手を振って\")",
+      "Bash(echo \"exit code: $?\")",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"頷いて\")"
     ]
   }
 }
