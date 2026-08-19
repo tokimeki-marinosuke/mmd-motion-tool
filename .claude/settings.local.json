@@ -26,7 +26,14 @@
       "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe scripts/generate_placeholder_motions.py)",
       "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"元気よく手を振って\")",
       "Bash(echo \"exit code: $?\")",
-      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"頷いて\")"
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"頷いて\")",
+      "Bash(.venv/Scripts/python.exe -m pytest tests/test_motions_adjust.py tests/test_main.py -v)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"大きく手を振って\")",
+      "Bash(mv output/wave_happy.vmd /tmp_big.vmd)",
+      "Bash(cp output/wave_happy.vmd big_wave.vmd)",
+      "Bash(PYTHONIOENCODING=utf-8 .venv/Scripts/python.exe src/main.py \"控えめに手を振って\")",
+      "Bash(cp output/wave_happy.vmd small_wave.vmd)",
+      "Bash(git add *)"
     ]
   }
 }
